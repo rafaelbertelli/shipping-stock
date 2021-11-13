@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ItemsController } from './gateways/controllers/items/items.controller';
+import { AppController } from './gateways/controllers/app.controller';
+import { ItemsController } from './gateways/controllers/items.controller';
+import { HelloWorldService } from './usecases/HelloWorld.service';
 
 @Module({
   imports: [ConfigModule.forRoot()],
 
   controllers: [AppController, ItemsController],
-  providers: [AppService],
+  providers: [HelloWorldService],
 })
-export class AppModule { }
+export class AppModule {}
